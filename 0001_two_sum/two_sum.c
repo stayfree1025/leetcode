@@ -22,8 +22,8 @@ int * twosum(int *nums, int numsSize, int target, int *returnSize)
     }
     qsort(objs, numsSize, sizeof(*objs), compare);//排序之后，只按照数组中值的大小排序，val和index值跟着变
     for (i = 0; i < numsSize; i++) {
-        printf(objs[i].val = %d,objs[i].val);
-        printf(objs[i].index = %d,objs[i].index);
+        printf("objs[i].val = %d\n",objs[i].val);
+        printf("objs[i].index = %d\n",objs[i].index);
     }
     int *results = (int*)malloc(2 * sizeof(int));
     i = 0;
