@@ -5,24 +5,27 @@
 struct object {
     int val;
     int index;
-};
+};//定义一个结构体
 
 static int compare(const void *a, const void *b)
 {
     return ((struct object *) a)->val - ((struct object *) b)->val;
-}
+}//定义比较函数
 
 int * twosum(int *nums, int numsSize, int target, int *returnSize)
 {
     int i, j;
-    struct object *objs = malloc(numsSize * sizeof(*objs));
+    struct object *objs = (object*)malloc(numsSize * sizeof(*objs));//malloc返回值是int型
     for (i = 0; i < numsSize; i++) {
         objs[i].val = nums[i];
         objs[i].index = i;
     }
-    qsort(objs, numsSize, sizeof(*objs), compare);
-    
-    int *results = malloc(2 * sizeof(int));
+    qsort(objs, numsSize, sizeof(*objs), compare);//排序之后，只按照数组中值的大小排序，val和index值跟着变
+    for (i = 0; i < numsSize; i++) {
+        printf(objs[i].val = %d,objs[i].val);
+        printf(objs[i].index = %d,objs[i].index);
+    }
+    int *results = (int*)malloc(2 * sizeof(int));
     i = 0;
     j = numsSize - 1;
     while (i < j) {
